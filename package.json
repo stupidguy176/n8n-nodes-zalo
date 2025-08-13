@@ -53,36 +53,18 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.20",
     "@types/node": "^24.2.1",
-    "@types/request": "^2.48.13",
-    "@types/semver": "^7.7.0",
-    "@types/whatwg-url": "^13.0.0",
-    "@typescript-eslint/parser": "~8.32.0",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.0",
-    "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
     "nodemon": "^3.1.9",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.2"
   },
-  "optionalDependencies": {
-    "sharp": "^0.32.1"
-  },
   "peerDependencies": {
     "n8n-core": ">=1.0.0",
     "n8n-workflow": "*"
-  },
-  "dependencies": {
-    "axios": "^1.8.4",
-    "n8n-nodes-zalo": "link:../../../.local/share/pnpm/global/5/node_modules/n8n-nodes-zalo",
-    "pnpm": "^10.6.5",
-    "zca-js": "2.0.0-beta.14"
-  },
-  "directories": {
-    "doc": "docs"
   },
   "type": "commonjs",
   "bugs": {
