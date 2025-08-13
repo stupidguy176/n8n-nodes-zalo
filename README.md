@@ -1,3 +1,70 @@
+
+## Docs
+https://docs.n8n.io/integrations/creating-nodes/overview/
+https://developers.zalo.me/docs
+https://github.com/ChickenAI/zalo-node
+
+https://docs.n8n.io/integrations/creating-nodes/build/declarative-style-node/#test-your-node
+
+## Step to run
+
+### In repo
+sudo npm install n8n -g
+pnpm install
+pnpm run build
+pnpm link
+
+## In n8n local
+cd ~/.n8n
+mkdir custom
+cd custom
+npm init
+pnpm link n8n-nodes-zalo
+n8n start
+
+[Plan your node](https://docs.n8n.io/integrations/creating-nodes/plan/)
+
+- node types: webhook
+- **Choose your node building approach: declarative**
+- **Design your node's user interface**
+
+**node building styles**
+
+### declarative style:
+
+https://docs.n8n.io/integrations/creating-nodes/build/declarative-style-node
+
+### programmatic style:
+
+https://docs.n8n.io/integrations/creating-nodes/build/programmatic-style-node
+
+https://docs.n8n.io/integrations/creating-nodes/build/reference/node-file-structure/#a-best-practice-example-for-programmatic-nodes
+
+### Summary
+The programmatic style requires an `execute()` method
+The declarative style handles this using the `routing` key in the `operations` object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
 # n8n-nodes-starter

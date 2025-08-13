@@ -1,31 +1,31 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-zalo",
   "version": "0.1.0",
-  "description": "",
+  "description": "https://docs.n8n.io/integrations/creating-nodes/overview/ https://developers.zalo.me/docs https://github.com/ChickenAI/zalo-node",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
-  "author": {
-    "name": "",
-    "email": ""
-  },
+  "homepage": "https://github.com/<...>/n8n-nodes-<...>#readme",
+  "author": "undefined",
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "git+https://github.com/<...>/n8n-nodes-<...>.git"
   },
   "engines": {
     "node": ">=20.15"
   },
   "main": "index.js",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "npx rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json",
+    "watch": "concurrently \"pnpm run watch\" \"pnpm run start:n8n\"",
+    "start:n8n": "nodemon --watch dist --exec \"npx n8n start\""
   },
   "files": [
     "dist"
@@ -34,22 +34,54 @@
     "n8nNodesApiVersion": 1,
     "credentials": [
       "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/HttpBinApi.credentials.js",
+      "dist/credentials/N8nApi.credentials.js",
+      "dist/credentials/ZaloApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/HttpBin/HttpBin.node.js",
+      "dist/nodes/ZaloLoginByQR/ZaloLoginByQR.node.js",
+      "dist/nodes/ZaloSendMessage/ZaloSendMessage.node.js",
+      "dist/nodes/ZaloUser/ZaloUser.node.js",
+      "dist/nodes/ZaloGroup/ZaloGroup.node.js",
+      "dist/nodes/ZaloMessageTrigger/ZaloMessageTrigger.node.js"
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.2.1",
+    "@types/request": "^2.48.13",
+    "@types/semver": "^7.7.0",
+    "@types/whatwg-url": "^13.0.0",
     "@typescript-eslint/parser": "~8.32.0",
+    "concurrently": "^9.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
+    "nodemon": "^3.1.9",
     "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
     "typescript": "^5.8.2"
   },
+  "optionalDependencies": {
+    "sharp": "^0.32.1"
+  },
   "peerDependencies": {
+    "n8n-core": ">=1.0.0",
     "n8n-workflow": "*"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "n8n-nodes-zalo": "link:../../../.local/share/pnpm/global/5/node_modules/n8n-nodes-zalo",
+    "pnpm": "^10.6.5",
+    "zca-js": "2.0.0-beta.14"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/<...>/n8n-nodes-<...>/issues"
   }
 }
