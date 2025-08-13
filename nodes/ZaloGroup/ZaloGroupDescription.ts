@@ -1,3 +1,8 @@
+/* eslint-disable n8n-nodes-base/node-param-type-options-missing-from-limit */
+/* eslint-disable n8n-nodes-base/node-param-description-wrong-for-limit */
+/* eslint-disable n8n-nodes-base/node-param-display-name-miscased */
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+/* eslint-disable n8n-nodes-base/node-param-operation-option-action-miscased */
 import { INodeProperties } from 'n8n-workflow';
 
 // Định nghĩa các operations cho Zalo Group
@@ -12,11 +17,13 @@ export const zaloGroupOperations: INodeProperties[] = [
 				resource: ['zaloGroup'],
 			},
 		},
+		// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 		options: [
 			{
 				name: 'Tạo Nhóm',
 				value: 'createGroup',
 				description: 'Tạo một nhóm mới',
+				// eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
 				action: 'Tạo Nhóm',
 			},
 			{

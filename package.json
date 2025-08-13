@@ -1,13 +1,17 @@
 {
-  "name": "n8n-nodes-zalo",
+  "name": "n8n-nodes-zalo-toolkit",
   "version": "0.1.0",
-  "description": "https://docs.n8n.io/integrations/creating-nodes/overview/ https://developers.zalo.me/docs https://github.com/ChickenAI/zalo-node",
+  "description": "Node for n8n Zalo integration",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
   "homepage": "https://github.com/<...>/n8n-nodes-<...>#readme",
-  "author": "undefined",
+  "author": {
+    "name": "hoaian",
+    "email": "hoaian176@gmail.com",
+    "url": "https://yourwebsite.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/<...>/n8n-nodes-<...>.git"

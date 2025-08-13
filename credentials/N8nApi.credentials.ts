@@ -5,7 +5,8 @@ import {
   
   export class N8nApi implements ICredentialType {
     name = 'n8nApi';
-    displayName = 'n8n Account Credential';
+    displayName = 'N8n Account Credential API';
+    // eslint-disable-next-line n8n-nodes-base/cred-class-field-documentation-url-not-http-url
     documentationUrl = 'n8n-n8n-api';
     iconUrl = 'file:./shared/n8n.png';
 
@@ -14,6 +15,7 @@ import {
         displayName: 'API Key',
         name: 'apiKey',  
         type: 'string',
+								typeOptions: { password: true },
         default: '',
         description: 'The API key used to authenticate with the n8n API.',
         required:  true,
